@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TATSH DOWN | Premium Caps</title>
+
+<style>
+*{
+    margin:0;    
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff;
+    color:#111;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    height:88px;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    padding:0 5%;
+    background:#fff;
+    border-bottom:1px solid #e8e8e8;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    justify-self:start;
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+}
+
+.logo img{
+    width:90px;
+    height:70px;
+    object-fit:contain;
+    display:block;
+}
+
+.logo span{
+    display:none;
+}
+
+.navbar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:42px;
+}
+
+.navbar a{
+    position:relative;
+    text-decoration:none;
+    color:#111;
+    font-size:15px;
+    font-weight:500;
+    padding:34px 0 28px;
+    transition:.25s;
+}
+
+.navbar a:hover{
+    opacity:.65;
+}
+
+.navbar a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:18px;
+    width:0;
+    height:2px;
+    background:#111;
+    transition:.25s;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after{
+    width:100%;
+}
+
+.header-icons{
+    justify-self:end;
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.icon{
+    border:0;
+    background:none;
+    cursor:pointer;
+    font-size:21px;
+    color:#111;
+    padding:0;
+}
+
+.cart-icon{
+    position:relative;
+}
+
+.cart-number{
+    position:absolute;
+    top:-9px;
+    right:-10px;
+    background:#111;
+    color:#fff;
+    width:17px;
+    height:17px;
+    border-radius:50%;
+    font-size:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    position:relative;
+    min: height 500px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    background:#111;
+}
+
+.hero-image{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    padding:0;
+    background:#111;
+}
+
+.hero-image img{
+    width:100%;
+    height:100%;
+    max-width:none;
+    object-fit: cover;
+    object-position:center;
+    display:block;
+}
+
+.hero-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        90deg,
+        rgba(0,0,0,.72) 0%,
+        rgba(0,0,0,.45) 38%,
+        rgba(0,0,0,.08) 72%,
+        rgba(0,0,0,.15) 100%
+    );
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding:70px 6%;
+    color:#fff;
+}
+
+.hero-label{
+    font-size:12px;
+    letter-spacing:4px;
+    color:#fff;
+    margin-bottom:20px;
+}
+
+.hero-content h1{
+    font-size:clamp(40px,8vw,100px);
+    line-height:.85;
+    letter-spacing:-5px;
+    margin-bottom:25px;
+    color:#fff;
+}
+
+.hero p{
+    color:#fff;
+    font-size:20px;
+    letter-spacing:4px;
+    margin-bottom:35px;
+}
+
+.shop-button{
+    width:max-content;
+    padding:15px 30px;
+    background:#fff;
+    color:#111;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:bold;
+    transition:.25s;
+}
+
+.shop-button:hover{
+    background:#111;
+    color:#fff;
+}
+
+/* ================= COLLECTION ================= */
+
+.collection{
+    padding:90px 10%;
+}
+
+.collection-heading{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:45px;
+}
+
+.collection-heading small{
+    display:block;
+    font-size:11px;
+    letter-spacing:4px;
+    color:#777;
+    margin-bottom:10px;
+}
+
+.collection-heading h2{
+    font-size:42px;
+    text-align: center;
+}
+
+.view-all{
+    text-decoration:none;
+    color:#111;
+    font-size:13px;
+    font-weight:bold;
+    border-bottom:1px solid #111;
+    padding-bottom:5px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.product{
+    background:#f5f5f5;
+    overflow:hidden;
+}
+
+.product-image{
+    height:300px;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.product-image img{
+    width:90%;
+    height:90%;
+    object-fit:contain;
+}
+
+.product-info{
+    padding:20px;
+    background:#f5f5f5;
+}
+
+.product-info h3{
+    font-size:14px;
+    letter-spacing:1px;
+    margin-bottom:8px;
+}
+
+.price{
+    color:#555;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.add{
+    width:100%;
+    padding:13px;
+    border:none;
+    background:#111;
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.add:hover{
+    background:#333;
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+}
+
+.feature{
+    padding:45px 30px;
+    text-align:center;
+    border-right:1px solid #ddd;
+}
+
+.feature:last-child{
+    border-right:0;
+}
+
+.feature h3{
+    font-size:14px;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.feature p{
+    color:#777;
+    font-size:13px;
+    line-height:1.6;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#111;
+    color:#fff;
+}
+
+.footer-main{
+    padding:65px 5%;
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+    gap:60px;
+}
+
+.footer-logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin-bottom:20px;
+}
+
+.footer-logo img{
+    width:65px;
+    height:65px;
+    background:#fff;
+    object-fit:contain;
+}
+
+.footer-logo span{
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.footer-text{
+    color:#aaa;
+    font-size:13px;
+    line-height:1.7;
+    max-width:350px;
+}
+
+.footer-column h3{
+    font-size:13px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+.footer-column a{
+    display:block;
+    color:#aaa;
+    text-decoration:none;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.socials{
+    display:flex;
+    gap:12px;
+}
+
+.social{
+    width:38px;
+    height:38px;
+    border:1px solid #555;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.bottom-bar{
+    border-top:1px solid #333;
+    padding:20px 5%;
+    display:flex;
+    justify-content:space-between;
+    color:#777;
+    font-size:11px;
+}
+
+/* ================= CART ================= */
+
+.cart-box{
+    position:fixed;
+    top:95px;
+    right:25px;
+    width:340px;
+    max-width:calc(100% - 40px);
+    background:#fff;
+    padding:25px;
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+    display:none;
+    z-index:3000;
+}
+
+.cart-box h2{
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.cart-item{
+    padding:12px 0;
+    border-bottom:1px solid #ddd;
+    font-size:13px;
+}
+
+.cart-total{
+    margin:20px 0;
+    font-weight:bold;
+}
+
+.close-cart{
+    width:100%;
+    padding:12px;
+    border:0;
+    background:#111;
+    color:#fff;
+    cursor:pointer;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:1000px){
+
+    header{
+        grid-template-columns:1fr auto;
+    }
+
+    .navbar{
+        display:none;
+    }
+
+    .hero{
+         height: 320px;
+         background-size: cover;
+         background-position: center;
+
+    }
+
+    .hero-content{
+        padding:60px 7%;
+    }
+
+    .hero h1{
+        font-size:clamp(55px,10vw,90px);
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-main{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    header{
+        height:75px;
+        padding:0 4%;
+    }
+
+    .logo img{
+        width:75px;
+        height:58px;
+    }
+
+    .header-icons{
+        gap:12px;
+    }
+
+    .icon{
+        font-size:19px;
+    }
+
+    .hero{
+        height: 54px;
+    }
+
+    .hero-content{
+        padding:50px 6%;
+    }
+
+    .hero h1{
+        font-size:5px;
+        letter-spacing:-3px;
+    }
+
+    .hero p{
+        font-size:14px;
+        letter-spacing:2px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .collection-heading{
+        display:block;
+    }
+
+    .view-all{
+        display:inline-block;
+        margin-top:15px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .feature{
+        border-right:0;
+        border-bottom:1px solid #ddd;
+    }
+
+    .footer-main{
+        grid-template-columns:1fr;
+        gap:35px;
+    }
+
+    .bottom-bar{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <a href="#home" class="logo">
+        <img src="image/log.png" alt="TATSH DOWN">
+    </a>
+
+    <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-icons">
+
+        <button class="icon" onclick="searchStore()" aria-label="Search">
+            ⌕
+        </button>
+
+        <button class="icon" onclick="accountMessage()" aria-label="Account">
+            ♙
+        </button>
+
+        <button class="icon cart-icon" onclick="openCart()" aria-label="Cart">
+            ♡
+            <span class="cart-number" id="cartCount">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-image">
+        <img src="image/imagesc ap0000787.jpg,.jpeg" alt="TATSH DOWN Caps">
+    </div>
+
+    <div class="hero-content">
+
+        <div class="hero-label">
+            PREMIUM CAPS
+        </div>
+
+        <h1>
+            TATSH DOWN
+        </h1>
+
+        <p>
+            MORE THAN JUST A CAP
+        </p>
+
+        <a href="#shop" class="shop-button">
+            SHOP NOW&nbsp; →
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SHOP ================= -->
+
+<section class="collection" id="shop">
+
+    <div class="collection-heading">
+
+        <div>
+
+            <small>FEATURED COLLECTION</small>
+
+            <h2>Latest Caps</h2>
+
+        </div>
+
+        <a href="#shop" class="view-all">
+            VIEW ALL
+        </a>
+
+    </div>
+
+
+    <div class="products">
+
+
+        <!-- CAP 1 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="image/WhatsApp Image 2026-10-08 at 2.20.52 AMhjjbj.jpeg"
+                    alt="TATSH DOWN Black Cap"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>TATSH DOWN BLACK</h3>
+
+                <div class="price">
+                    $35.00
+                </div>
+
+                <button
+                    class="add"
+                    onclick="addToCart('TATSH DOWN BLACK',35)"
+                >
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAP 2 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="image/imagesc ap0119999jpg,.jpeg"
+                    alt="TATSH DOWN White Cap"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>TATSH DOWN WHITE</h3>
+
+                <div class="price">
+                    $35.00
+                </div>
+
+                <button
+                    class="add"
+                    onclick="addToCart('TATSH DOWN WHITE',35)"
+                >
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAP 3 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="image/nn.jpeg"
+                    alt="TATSH DOWN Gray Cap"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>TATSH DOWN GRAY</h3>
+
+                <div class="price">
+                    $35.00
+                </div>
+
+                <button
+                    class="add"
+                    onclick="addToCart('TATSH DOWN GRAY',35)"
+                >
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAP 4 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="image/hh.jpeg"
+                    alt="TATSH DOWN Beige Cap"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>TATSH DOWN BEIGE</h3>
+
+                <div class="price">
+                    $35.00
+                </div>
+
+                <button
+                    class="add"
+                    onclick="addToCart('TATSH DOWN BEIGE',35)"
+                >
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAP 5 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="image/mam.jpg.jpg"
+                    alt=""
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>TATSH DOWN CLASSIC</h3>
+
+                <div class="price">
+                    $35.00
+                </div>
+
+                <button
+                    class="add"
+                    onclick="addToCart('TATSH DOWN CLASSIC',35)"
+                >
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAP 6 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="image/kkkb.jpg.jpg"
+                    alt="TATSH DOWN Cap"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>TATSH DOWN STREET</h3>
+
+                <div class="price">
+                    $35.00
+                </div>
+
+                <button
+                    class="add"
+                    onclick="addToCart('TATSH DOWN STREET',35)"
+                >
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAP 7 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="image/kota.jpg.jpg"
+                    alt=""
+                    
+                    
+                >
+                
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>TATSH DOWN PREMIUM</h3>
+
+                <div class="price">
+                    $40.00
+                </div>
+
+                <button
+                    class="add"
+                    onclick="addToCart('TATSH DOWN PREMIUM',40)"
+                >
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- CAP 8 -->
+
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="image/ve.jpg.jpg"
+                    alt="TATSH DOWN Cap"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>TATSH DOWN SIGNATURE</h3>
+
+                <div class="price">
+                    $40.00
+                </div>
+
+                <button
+                    class="add"
+                    onclick="addToCart('TATSH DOWN SIGNATURE',40)"
+                >
+                    ADD TO CART
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features" id="about">
+
+    <div class="feature">
+
+        <h3>PREMIUM QUALITY</h3>
+
+        <p>
+            High-quality caps designed for everyday streetwear.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <h3>ORIGINAL DESIGN</h3>
+
+        <p>
+            TATSH DOWN brings a distinctive identity to every cap.
+        </p>
+
+    </div>
+
+
+    <div class="feature">
+
+        <h3>WORLDWIDE STYLE</h3>
+
+        <p>
+            Designed to be worn anywhere, anytime.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer id="contact">
+
+    <div class="footer-main">
+
+
+        <div>
+
+            <div class="footer-logo">
+
+                <img
+                    src="image/log.png"
+                    alt="ToucDOWN"
+                >
+
+                <span>ToucDOWN</span>
+
+            </div>
+
+            <p class="footer-text">
+                More than just a cap.
+                Premium streetwear made for everyday style.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>QUICK LINKS</h3>
+
+            <a href="#">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>FOLLOW US</h3>
+
+            <div class="socials">
+
+                <a class="social" href="#">
+                    IG
+                </a>
+
+                <a class="social" href="#">
+                    TK
+                </a>
+
+                <a class="social" href="#">
+                    X
+                </a>
+
+                <a class="social" href="#">
+                    YT
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="bottom-bar">
+
+        <span>
+            © 2026 TATSH DOWN
+        </span>
+
+        <span>
+            ALL RIGHTS RESERVED
+        </span>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= CART ================= -->
+
+<div class="cart-box" id="cartBox">
+
+    <h2>YOUR CART</h2>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-total" id="cartTotal">
+        TOTAL: $0.00
+    </div>
+
+    <button
+        class="close-cart"
+        onclick="closeCart()"
+    >
+        CLOSE
+    </button>
+
+</div>
+
+
+<script>
+
+let cart = [];
+
+
+function addToCart(name,price){
+
+    cart.push({
+        name:name,
+        price:price
+    });
+
+    document.getElementById("cartCount").innerText =
+        cart.length;
+
+    alert(name + " added to cart.");
+
+}
+
+
+function openCart(){
+
+    const box =
+        document.getElementById("cartBox");
+
+    const items =
+        document.getElementById("cartItems");
+
+    const total =
+        document.getElementById("cartTotal");
+
+    box.style.display = "block";
+
+    items.innerHTML = "";
+
+    let sum = 0;
+
+    if(cart.length === 0){
+
+        items.innerHTML =
+            "<p>Your cart is empty.</p>";
+
+    }
+
+    cart.forEach(function(item){
+
+        sum += item.price;
+
+        const div =
+            document.createElement("div");
+
+        div.className = "cart-item";
+
+        div.innerText =
+            item.name + " — $" +
+            item.price.toFixed(2);
+
+        items.appendChild(div);
+
+    });
+
+    total.innerText =
+        "TOTAL: $" + sum.toFixed(2);
+
+}
+
+
+function closeCart(){
+
+    document.getElementById("cartBox")
+        .style.display = "none";
+
+}
+
+
+function searchStore(){
+
+    alert("Search will be added here.");
+
+}
+
+
+function accountMessage(){
+
+    alert("Account page will be added here.");
+
+}
+
+</script>
+
+</body>
+</html>
